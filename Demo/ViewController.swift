@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController {
     
     //MARK: IBOutlets
     @IBOutlet weak var upiIdTF: CustomTextField!
@@ -18,12 +18,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var frequencyTF: CustomTextField!
     @IBOutlet weak var remarksTF: CustomTextField!
     
+    @IBOutlet weak var checkBoxBtn: UIButton!
+    
     @IBOutlet weak var scrollview: UIScrollView!
     
-    //MARK: Views
+    //MARK:- Views
     lazy var bar = UIToolbar()
     
-    //MARK: viewcontroller methods
+    //MARK:- viewcontroller methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -39,6 +41,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         deRegisterKeyboardNotifications()
     }
     
+    //MARK:- Setup
     /**
      This method will setup view for textField
      */
@@ -65,8 +68,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         bar.items = [flexibleSpace, done]
         bar.sizeToFit()
         amountTF.inputAccessoryView = bar
+        
+        ///4. checkbox button setup
+        checkBoxBtn.setImage(UIImage(systemName: "square"), for: .normal)
+        checkBoxBtn.setImage(UIImage(systemName: "checkmark.square"), for: .selected)
     }
     
+    //MARK:- Button Actions
     @objc func startDateSelected() {
         if let datePicker = self.startDateTF.inputView as? UIDatePicker {
             let dateFormatter = DateFormatter()
@@ -107,7 +115,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    //MARK: TextField delegate methods
+    @IBAction func checkMarkTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.15, delay: 0.1, options: .curveLinear, animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            
+        }) { (success) in
+            UIView.animate(withDuration: 0.15, delay: 0.1, options: .curveLinear, animations: {
+                sender.isSelected = !sender.isSelected
+                sender.transform = .identity
+            }, completion: nil)
+        }
+    }
+}
+
+//MARK:- TextField delegate methods
+extension ViewController: UITextFieldDelegate{
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
         /**handle keyboard view inside scrollview*/
         activeTextField = textField
@@ -144,5 +167,4 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-    
 }

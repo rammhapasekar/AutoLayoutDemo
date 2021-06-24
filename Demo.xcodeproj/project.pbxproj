@@ -14,7 +14,6 @@
 		3F904D2A26820AA200A0F40B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F904D2926820AA200A0F40B /* Assets.xcassets */; };
 		3F904D2D26820AA200A0F40B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F904D2B26820AA200A0F40B /* LaunchScreen.storyboard */; };
 		3F904D3626820D1900A0F40B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F904D3526820D1900A0F40B /* CustomTextField.swift */; };
-		3F904D3A268239FE00A0F40B /* UILabelX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F904D37268239FE00A0F40B /* UILabelX.swift */; };
 		3F904D3B268239FE00A0F40B /* UIViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F904D38268239FE00A0F40B /* UIViewX.swift */; };
 		3F904D3C268239FE00A0F40B /* UIButtonX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F904D39268239FE00A0F40B /* UIButtonX.swift */; };
 		3F904D3F2682704600A0F40B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F904D3E2682704600A0F40B /* Extensions.swift */; };
@@ -30,7 +29,6 @@
 		3F904D2C26820AA200A0F40B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F904D2E26820AA200A0F40B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F904D3526820D1900A0F40B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		3F904D37268239FE00A0F40B /* UILabelX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelX.swift; sourceTree = "<group>"; };
 		3F904D38268239FE00A0F40B /* UIViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewX.swift; sourceTree = "<group>"; };
 		3F904D39268239FE00A0F40B /* UIButtonX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonX.swift; sourceTree = "<group>"; };
 		3F904D3E2682704600A0F40B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 			children = (
 				3F904D3526820D1900A0F40B /* CustomTextField.swift */,
 				3F904D39268239FE00A0F40B /* UIButtonX.swift */,
-				3F904D37268239FE00A0F40B /* UILabelX.swift */,
 				3F904D38268239FE00A0F40B /* UIViewX.swift */,
 			);
 			path = Attributes;
@@ -162,7 +159,6 @@
 			files = (
 				3F904D3626820D1900A0F40B /* CustomTextField.swift in Sources */,
 				3F904D2526820AA100A0F40B /* ViewController.swift in Sources */,
-				3F904D3A268239FE00A0F40B /* UILabelX.swift in Sources */,
 				3F904D3F2682704600A0F40B /* Extensions.swift in Sources */,
 				3F904D3C268239FE00A0F40B /* UIButtonX.swift in Sources */,
 				3F904D2126820AA100A0F40B /* AppDelegate.swift in Sources */,

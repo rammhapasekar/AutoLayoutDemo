@@ -52,7 +52,6 @@ class CustomTextField: UITextField {
         }
     }
     
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -62,9 +61,9 @@ class CustomTextField: UITextField {
         self.addTarget(self, action: #selector(self.addFloatingLabel), for: .editingDidBegin)
         self.addTarget(self, action: #selector(self.removeFloatingLabel), for: .editingDidEnd)
         
-        addBorder()
+//        addBorder()
     }
-    
+    /**Issue: layer overflow issue*/
     func addBorder(){
         //add border line to bottom of the textfield
         let borderHeight: CGFloat = 1.0
@@ -72,9 +71,8 @@ class CustomTextField: UITextField {
         bottomLine.frame = CGRect(x: 0, y: self.frame.size.height - borderHeight, width: self.frame.size.width, height: borderHeight)
         bottomLine.backgroundColor = UIColor.systemGray5.cgColor
         borderStyle = .none
-//        layer.addSublayer(bottomLine)
-//        self.clipsToBounds = true
-//        layer.masksToBounds = true
+        layer.addSublayer(bottomLine)
+        layer.masksToBounds = true
     }
     
     // Add a floating label to the view on becoming first responder
@@ -188,15 +186,6 @@ class CustomTextField: UITextField {
     func updateView() {
         setLeftImage()
         setRightImage()
-        
-        
-        
-        // Placeholder text color
-//        attributedPlaceholder = NSAttributedString(string: placeholder != nil ?  placeholder! : "", attributes:[NSForegroundColorAttributeName: tintColor])
-        
-        //attributed Text
-        
-//        attributedText = NSAttributedString(string: text != nil ? text! : "" , attributes:[NSAttributedString.Key.foregroundColor: UIColor.lightText,NSAttributedString.Key.font :UIFont.systemFont(ofSize: 10)])
     }
     
     func setLeftImage() {
@@ -207,9 +196,6 @@ class CustomTextField: UITextField {
             let imageView = UIImageView(frame: CGRect(x: leftPadding, y: 3, width: 20, height: 20))
             imageView.image = image.withRenderingMode(.alwaysTemplate)
             imageView.contentMode =  .scaleAspectFit
-//            imageView.tintColor = .TEXTCOLOR_DARK
-        
-            // Note: In order for your image to use the tint color, you have to select the image in the Assets.xcassets and change the "Render As" property to "Template Image".
             imageView.tintColor = UIColor.systemGray3
             
             var width = image.size.width + leftPadding
@@ -235,10 +221,8 @@ class CustomTextField: UITextField {
         if let image = rightImage, isRightViewVisible {
             let imageView = UIImageView(frame: CGRect(x: 0, y: 3, width: 20, height: 20))
             imageView.image = image
-            imageView.contentMode =  .scaleAspectFit // .scaleAspectFill //
-            // Note: In order for your image to use the tint color, you have to select the image in the Assets.xcassets and change the "Render As" property to "Template Image".
+            imageView.contentMode =  .scaleAspectFit
             imageView.tintColor = UIColor.systemGray3
-//            imageView.backgroundColor = UIColor.red
             
             var width = image.size.width + rightPadding
             

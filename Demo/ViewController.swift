@@ -115,6 +115,9 @@ class ViewController: UIViewController {
         }
     }
     
+    /**
+     Handle checkbox selection
+     */
     @IBAction func checkMarkTapped(_ sender: UIButton) {
         UIView.animate(withDuration: 0.15, delay: 0.1, options: .curveLinear, animations: {
             sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
@@ -132,7 +135,6 @@ class ViewController: UIViewController {
 extension ViewController: UITextFieldDelegate{
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        /**handle keyboard view inside scrollview*/
         activeTextField = textField
     }
     
